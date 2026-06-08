@@ -1078,46 +1078,7 @@
   },
   "files": {
     ".Rprofile": {
-      "checksum": "fc172b611a2d443401845b62c08b5529"
-    },
-    "EcoBotCR_files/libs/bootstrap/bootstrap-138a6193a3bd40baf1e627da441a4734.min.css": {
-      "checksum": "138a6193a3bd40baf1e627da441a4734"
-    },
-    "EcoBotCR_files/libs/bootstrap/bootstrap-icons.css": {
-      "checksum": "886da841d7421705f715f600c5ff11bb"
-    },
-    "EcoBotCR_files/libs/bootstrap/bootstrap-icons.woff": {
-      "checksum": "efe54401ef52214fd3b701e23ff88c5f"
-    },
-    "EcoBotCR_files/libs/bootstrap/bootstrap.min.js": {
-      "checksum": "e2b09c06f0e714b6144a6788a28e3950"
-    },
-    "EcoBotCR_files/libs/clipboard/clipboard.min.js": {
-      "checksum": "15f52a1ee547f2bdd46e56747332ca2d"
-    },
-    "EcoBotCR_files/libs/quarto-html/anchor.min.js": {
-      "checksum": "91bcf6cd1fd88fec3f109811e5fc3546"
-    },
-    "EcoBotCR_files/libs/quarto-html/popper.min.js": {
-      "checksum": "3a4a291ccf3f1ea0f82b641542fd3827"
-    },
-    "EcoBotCR_files/libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css": {
-      "checksum": "7f8f88aac4f3542376d5c11b86a4c14d"
-    },
-    "EcoBotCR_files/libs/quarto-html/quarto.js": {
-      "checksum": "6f4245742deb3cc92337dbe2701ccfe1"
-    },
-    "EcoBotCR_files/libs/quarto-html/tabsets/tabsets.js": {
-      "checksum": "e8d6a8862b33ccc461f8fd532e05b365"
-    },
-    "EcoBotCR_files/libs/quarto-html/tippy.css": {
-      "checksum": "ebd6f8ce46a677e1a4f5f8a8317109a9"
-    },
-    "EcoBotCR_files/libs/quarto-html/tippy.umd.min.js": {
-      "checksum": "d828775275749701b48bd9d958814111"
-    },
-    "EcoBotCR.html": {
-      "checksum": "c8df947dd3ed9b13519ddce69124488b"
+      "checksum": "217451900c3af66af177610dd1d709e0"
     },
     "EcoBotCR.qmd": {
       "checksum": "9b2a99a62446e60b36f8936f3fa4f241"
