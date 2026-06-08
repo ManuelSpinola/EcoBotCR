@@ -1,0 +1,50 @@
+/* Estilos */
+
+h1.title {
+  color: white;
+  background-color: #a31e32;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+h1 {
+  display: inline-block;       /* que el contenedor se ajuste al contenido */
+  background-color: white;   /* color de fondo */
+  color: black;                /* color texto */
+  padding: 10px 20px;          /* espacio interno */
+  border-radius: 5px;          /* bordes redondeados */
+  text-align: center;
+  font-size: 2.5rem;
+}
+
+/* Para centrar la caja dentro del contenedor padre */
+.title-container {
+  text-align: center;             /* Centra contenido inline/inline-block */
+}
+
+
+/* Estilos para el sidebar */
+
+.panel-sidebar {
+  background-color: #a31e32 !important;
+  color: white !important;
+}
+
+.panel-sidebar *,
+.panel-sidebar a {
+  color: white !important;
+}
+
+/* Estilos para el panel principal (contenido fuera del sidebar) */
+.panel-fill {
+  background-color: #fdf6f6 !important; /* Fondo claro */
+  color: #222 !important; /* Texto oscuro */
+}
+
+/* Ejemplo de título dentro del contenido */
+.panel-fill h1,
+.panel-fill h2,
+.panel-fill h3 {
+  color: #a31e32 !important;
+}
