@@ -87,6 +87,16 @@ ui <- fluidPage(
       color: #666;
       padding: 30px 40px 20px 40px;
     }
+
+    /* Responsive móvil */
+    @media (max-width: 768px) {
+      .banner-titulo { font-size: 1.1rem; padding: 12px 15px; }
+      .subtitulo { font-size: 1.1rem; padding: 0 15px 10px 15px; }
+      .logo-container img { width: 65% !important; }
+      .col-sm-3 { width: 100% !important; margin-bottom: 15px; }
+      .col-sm-9 { width: 100% !important; }
+      .footer-text { padding: 20px 15px; font-size: 11px; }
+    }
   ")),
 
   # Banner título
