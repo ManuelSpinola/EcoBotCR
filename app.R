@@ -9,7 +9,6 @@ library(bslib)
 library(shinychat)
 library(ellmer)
 
-# ── UI ───────────────────────────────────────────────────────
 ui <- fluidPage(
 
   theme = bs_theme(
@@ -20,7 +19,6 @@ ui <- fluidPage(
     base_font = font_google("Nunito")
   ),
 
-  # CSS adicional para replicar el estilo original
   tags$style(HTML("
     body { margin: 0; padding: 0; }
 
@@ -31,98 +29,93 @@ ui <- fluidPage(
       text-align: center;
       padding: 18px 30px;
       font-size: 1.6rem;
-      margin-bottom: 20px;
-    }
-
-    .subtitulo {
-      font-size: 1.4rem;
-      font-weight: bold;
-      padding: 0 30px 10px 30px;
-    }
-
-    .logo-container {
-      text-align: center;
-      padding: 10px 0 5px 0;
-    }
-
-    .logo-caption {
-      text-align: center;
-      font-style: italic;
-      color: #666;
-      font-size: 13px;
-      margin-bottom: 15px;
+      margin-bottom: 0;
     }
 
     .panel-sidebar-custom {
-      background-color: #a31e32 !important;
-      color: white !important;
+      background-color: #F8F0F0 !important;
+      color: #a31e32 !important;
       padding: 18px;
-      border-radius: 6px;
+      height: 100%;
+      min-height: 500px;
+      border-right: 1px solid #E8C8C8;
     }
 
     .panel-sidebar-custom h5 {
       font-weight: bold;
-      margin-bottom: 12px;
+      color: #a31e32;
+      margin-top: 15px;
+      margin-bottom: 10px;
     }
 
     .panel-sidebar-custom ul {
       padding-left: 16px;
       margin: 0;
+      color: #2C2C2C;
     }
 
     .panel-sidebar-custom li {
       margin-bottom: 8px;
       font-size: 14px;
+      color: #2C2C2C;
+    }
+
+    .logo-caption {
+      font-style: italic;
+      font-size: 11px;
+      color: #a31e32;
+      text-align: center;
+      margin-top: 6px;
     }
 
     .panel-chat {
       background-color: #fdf6f6;
-      border-radius: 6px;
       padding: 10px;
+      height: 100%;
     }
 
     .footer-text {
       text-align: center;
       font-size: 12px;
       color: #666;
-      padding: 30px 40px 20px 40px;
+      padding: 20px 40px;
     }
 
-    /* Responsive móvil */
     @media (max-width: 768px) {
       .banner-titulo { font-size: 1.1rem; padding: 12px 15px; }
-      .subtitulo { font-size: 1.1rem; padding: 0 15px 10px 15px; }
-      .logo-container img { width: 65% !important; }
-      .col-sm-3 { width: 100% !important; margin-bottom: 15px; }
+      .col-sm-3 { width: 100% !important; }
       .col-sm-9 { width: 100% !important; }
-      .footer-text { padding: 20px 15px; font-size: 11px; }
+      .panel-sidebar-custom { min-height: unset; }
+      .footer-text { padding: 15px; font-size: 11px; }
     }
   ")),
 
-  # Banner título
   div(class = "banner-titulo",
     "CR BioBot: tu asistente virtual sobre la Biodiversidad de Costa Rica"
   ),
 
-  # Subtítulo
-  div(class = "subtitulo",
-    "Con la ayuda de Talentoso, el oso perezoso sabio"
-  ),
-
-  # Logo centrado
-  div(class = "logo-container",
-    tags$img(src = "logo_2.png", width = "30%")
-  ),
-  div(class = "logo-caption",
-    "Ilustración por Gemini 2.0 Flash y Maritza Ramírez"
-  ),
-
-  # Layout sidebar + chat
   fluidRow(
-    style = "padding: 0 20px; margin: 0;",
+    style = "padding: 0; margin: 0;",
 
     column(3,
+      style = "padding: 0;",
       div(class = "panel-sidebar-custom",
+        div(
+          style = "text-align: center; margin-bottom: 5px;",
+          tags$img(
+            src   = "logo_2.png",
+            width = "55%",
+            style = "border-radius: 50%;"
+          ),
+          div(class = "logo-caption",
+            tags$span(style = "font-size: 13px; color: #a31e32; font-style: italic;",
+              "Con la ayuda de Talentoso, el oso perezoso sabio"),
+            tags$br(),
+            tags$span(style = "font-size: 10px;",
+              "Ilustración por Gemini 2.0 Flash y Maritza Ramírez")
+          )
+        ),
+        hr(style = "border-color: #c0394a; margin: 10px 0;"),
         h5("Ejemplos de preguntas"),
         tags$ul(
           tags$li("¿Cuáles parques nacionales hay en Guanacaste?"),
@@ -134,22 +127,21 @@ ui <- fluidPage(
     ),
 
     column(9,
+      style = "padding: 0;",
       div(class = "panel-chat",
         chat_ui("chat",
                 placeholder = "Escribe tu pregunta aquí...",
-                height      = "420px")
+                height      = "calc(100vh - 120px)")
       )
     )
   ),
 
-  # Footer
   div(class = "footer-text",
     p("© 2025 Observatorio de Vida Silvestre y Biodiversidad de Costa Rica, ICOMVIS-UNA. Este asistente utiliza Gemini 2.5 Flash (Google AI) como motor de lenguaje. Google no respalda ni administra esta aplicación."),
     p("Nota: Este asistente virtual no es un experto en biodiversidad, sino un modelo de lenguaje que intenta proporcionar información precisa y útil. Sin embargo, siempre es recomendable consultar fuentes adicionales para obtener información más detallada y actualizada.")
   )
 )
 
-# ── Server ───────────────────────────────────────────────────
 server <- function(input, output, session) {
 
   chat <- ellmer::chat_google_gemini(
