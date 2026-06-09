@@ -74,19 +74,11 @@ ui <- fluidPage(
       height: 100%;
     }
 
-    .footer-text {
-      text-align: center;
-      font-size: 12px;
-      color: #666;
-      padding: 20px 40px;
-    }
-
     @media (max-width: 768px) {
       .banner-titulo { font-size: 1.1rem; padding: 12px 15px; }
       .col-sm-3 { width: 100% !important; }
       .col-sm-9 { width: 100% !important; }
       .panel-sidebar-custom { min-height: unset; }
-      .footer-text { padding: 15px; font-size: 11px; }
     }
   ")),
 
@@ -136,9 +128,13 @@ ui <- fluidPage(
     )
   ),
 
-  div(class = "footer-text",
-    p("© 2025 Observatorio de Vida Silvestre y Biodiversidad de Costa Rica, ICOMVIS-UNA. Este asistente utiliza Gemini 2.5 Flash (Google AI) como motor de lenguaje. Google no respalda ni administra esta aplicación."),
-    p("Nota: Este asistente virtual no es un experto en biodiversidad, sino un modelo de lenguaje que intenta proporcionar información precisa y útil. Sin embargo, siempre es recomendable consultar fuentes adicionales para obtener información más detallada y actualizada.")
+  div(
+    style = paste0(
+      "background-color:#a31e32; color:#ffffff; ",
+      "text-align:center; padding:6px 12px; ",
+      "font-size:0.75rem; line-height:1.6;"
+    ),
+    "Manuel Spínola · ICOMVIS · Universidad Nacional · Costa Rica"
   )
 )
 
